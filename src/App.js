@@ -1,23 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+// Video: https://www.youtube.com/watch?v=aeYxBd1it7I
+// Code: https://github.com/chrisblakely01/react-budget-app
 
 const App = () => {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Budget Tracker</h1>
     </div>
   );
 };
