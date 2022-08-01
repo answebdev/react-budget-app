@@ -11,10 +11,11 @@ const AppReducer = (state, action) => {
 
 // Initial state our context will use when the app loads
 const initialState = {
-  budget: 2000,
+  budget: 3000,
   expenses: [
     { id: 12, name: 'shopping', cost: 40 },
     { id: 13, name: 'vacation', cost: 400 },
+    { id: 14, name: 'car repairs', cost: 195 },
   ],
 };
 
