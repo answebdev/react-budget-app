@@ -4,6 +4,16 @@ import { createContext, useReducer } from 'react';
 const AppReducer = (state, action) => {
   // Use a switch statement to determine exactly how to change and update the state:
   switch (action.type) {
+    case 'ADD_EXPENSE':
+      return {
+        // Copy the current state:
+        ...state,
+        // Override the expenses with a new array -
+        // this new 'expenses' object takes a copy of the current expenses ('...state.expenses')
+        // and adds the expense that is taken from the payload ('action.payload', i.e., the expense added and submitted from the form by the user).
+        // When this returns, it updates our state in our AppProvider (down below)
+        expenses: [...state.expenses, action.payload],
+      };
     default:
       return state;
   }
