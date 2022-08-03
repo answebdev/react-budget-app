@@ -14,6 +14,17 @@ const AppReducer = (state, action) => {
         // When this returns, it updates our state in our AppProvider (down below)
         expenses: [...state.expenses, action.payload],
       };
+    case 'DELETE_EXPENSE':
+      return {
+        ...state,
+        // Override existing set of expenses with a new set of expenses -
+        // use the id received as part of the payload from the action and filter out that id from the existing list of expenses
+        // and return that new list;
+        // this will return a new array that does not have the expense that was just deleted:
+        expenses: state.expenses.filter(
+          (expense) => expense.id !== action.payload
+        ),
+      };
     default:
       return state;
   }
