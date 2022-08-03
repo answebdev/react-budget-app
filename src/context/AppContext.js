@@ -44,7 +44,7 @@ export const AppContext = createContext();
 
 // A provider wraps the component that we want to pass certain state values to.
 // The app provider is what holds the state and passes it to our components.
-export const AppProvider = (props) => {
+export const AppProvider = ({ children }) => {
   // 'useReducer' is similar to 'useState' - it gives us the current state,
   // and also a function to update the state. In this case, it gives us a 'dispatch' function that we'll use to dispatch actions.
   // Whenever we call the 'useReducer' hook, we have to pass it 2 things: a reducer and the initial state: here, 'AppReducer' and 'initialState',
@@ -53,13 +53,18 @@ export const AppProvider = (props) => {
 
   return (
     <AppContext.Provider
+      // The 'value' is what all the components (i.e., all of the 'children' components in App.js, i.e., the entire application)
+      // inside of the Provider (see App.js: 'AppProvider') will have access to
+      // using the 'useContext' hook (see how each individual component uses the 'useContext' hook to do this).
+      // In this case, all of the components will have access to 'budget', 'expenses', and 'dispatch',
+      // and which they can have access to using the 'useContext' hook.
       value={{
         budget: state.budget,
         expenses: state.expenses,
         dispatch,
       }}
     >
-      {props.children}
+      {children}
     </AppContext.Provider>
   );
 };
