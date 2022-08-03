@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import { TiDelete } from 'react-icons/ti';
+import { MdDeleteForever } from 'react-icons/md';
 
 const ExpenseItem = (props) => {
   const { dispatch } = useContext(AppContext);
@@ -19,7 +19,16 @@ const ExpenseItem = (props) => {
         <span class='badge rounded-pill text-bg-primary mr-3'>
           ${props.cost}
         </span>
-        <TiDelete onClick={handleDeleteExpense} size='1.5em' />
+        <MdDeleteForever
+          style={{
+            cursor: 'pointer',
+            marginLeft: '10px',
+            marginBottom: '1px',
+          }}
+          onClick={handleDeleteExpense}
+          size='1.5em'
+          title='Delete'
+        />
       </div>
     </li>
   );
