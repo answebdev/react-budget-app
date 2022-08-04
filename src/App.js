@@ -34,12 +34,7 @@ const App = () => {
               <h1>Budget Tracker</h1>
             </div>
             <div style={{ marginTop: '20px' }}>
-              {' '}
-              <button
-                onClick={() => handleToggleDarkMode()}
-                // class='btn btn-primary'
-                className='toggle'
-              >
+              <button onClick={() => handleToggleDarkMode()} className='toggle'>
                 Toggle Mode
               </button>
             </div>
