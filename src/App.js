@@ -30,10 +30,10 @@ const App = () => {
               alignItems: 'center',
             }}
           >
-            <div>
-              <h1 className='mt-3'>Budget Tracker</h1>
+            <div style={{ marginTop: '20px' }}>
+              <h1>Budget Tracker</h1>
             </div>
-            <div>
+            <div style={{ marginTop: '20px' }}>
               {' '}
               <button
                 onClick={() => handleToggleDarkMode()}
